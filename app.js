@@ -2,6 +2,7 @@ var url = 'mongodb://username:password@ip:port/databasename', //完整的连接�
     url = 'mongodb://localhost:27017/part10',  // 简写
     mongoose = require('mongoose')    // 连接要用到的
 var Company = require('./models/Company')
+var Book = require('./models/Book')
 mongoose.connect(url, (err) => {
     if (err) {
         console.log('发生多错误')
@@ -18,12 +19,12 @@ Company.find((err, res) => {
 
     }
 })
-var kmsj = new Company({
-    companyName: '酷码视觉',
-    code: 'kmsj',
-    phone: 13800000001
-})
-kmsj.save()
+// var kmsj = new Company({
+//     companyName: '酷码视觉',
+//     code: 'kmsj',
+//     phone: 13800000001
+// })
+// kmsj.save()
 
 /**
  * 
@@ -41,4 +42,8 @@ Company.find(cond,(err,res)=>{
     } else {
         console.log(res)
     }
+})
+
+Book.findByISBN('1002',(err,res)=>{
+    console.log(res)
 })

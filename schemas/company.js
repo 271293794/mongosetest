@@ -11,9 +11,9 @@ var companySchema = new mongoose.Schema({
         // 内置的一种 set 修饰器
         trim: true,
         // 自定义的 get 修饰器
-        get: (name) => {
+        get: (companyCode) => {
             if (name.indexOf('成都') !== 0)
-                return '成都' + name
+                return '成都' + companyCode
         }
     },
     phone: {
