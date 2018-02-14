@@ -24,3 +24,21 @@ var kmsj = new Company({
     phone: 13800000001
 })
 kmsj.save()
+
+/**
+ * 
+ * 一个或条件的写法，公司名是 "信新" 或 "酷码视觉" 的
+ */
+var cond = {
+    $or: [
+        { companyName: "酷码视觉" },
+        { companyName: "信新" }
+    ]
+}
+Company.find(cond,(err,res)=>{
+    if (err) {
+        console.log('发生错误')
+    } else {
+        console.log(res)
+    }
+})
