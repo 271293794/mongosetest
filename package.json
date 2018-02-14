@@ -1,4 +1,7 @@
 {
   "name": "mongosetest",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "mongose": "^0.0.2-security"
+  }
 }
